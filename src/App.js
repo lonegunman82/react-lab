@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import "milligram";
 import './App.css';
 import {useState} from "react";
 
@@ -12,11 +13,17 @@ function App() {
     }
 
 
+    function logout() {
+        setIsAutenticated(false)
+        setEmail("")
+    }
+
+
     let content
     if (isAutenticated){
         content = <div>
         <h2>Witaj {email}</h2>
-        <button onClick={()=>setIsAutenticated(false)}>Wyloguj</button>
+        <button onClick={logout}>Wyloguj</button>
         </div>
 
 
